@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className='fromcontainer'>
         <div className="formwrapper">
-            <span className='logo'>You<span style={{color:'red',fontSize: '500'}}>&</span>Me</span>
+            <span className='logo'>Connect<span style={{color:'red',fontSize: '500'}}>IT</span></span>
             <span className='title'>Login</span>
             <form action="" onSubmit={handleSubmit}>
                 <input type="email"  id="email" placeholder='email' required/>

@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/authContext';
 import { ChatContext } from '../../context/ChatsContexts';
 
 const Chats = () => {
-  const[chats,setChats] = useState([]);
+  const[chats,setChats] = useState({});
 
   const{currentUser} = useContext(AuthContext);
   const{dispatch} = useContext(ChatContext);
@@ -13,7 +13,7 @@ const Chats = () => {
   useEffect(() => {
     const getchats = () => {
       const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-      setChats(doc.data());
+      setChats(doc.data() || {});
       });
       return () => {
         unsub();
